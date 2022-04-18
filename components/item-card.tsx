@@ -87,7 +87,7 @@ export default function ItemCard(props: Props) {
               >
                 <span>
                   {"played" in item
-                    ? item.population.toString()
+                    ? item.population.toLocaleString()
                     : "Population"}
                 </span>
               </animated.div>
