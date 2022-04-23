@@ -17,7 +17,7 @@ export function getRandomItem(deck: Item[], played: Item[]): Item {
 
     // iterate over all instance_of and check if it is a commune or a municipality
     for (const instance of candidate.instance_of) {
-      if (instance.includes("commune") || instance.includes("municipality")) {
+      if (instance.includes("commune") || instance.includes("municipa") || instance.includes("diocese") || instance.includes("eclesiast")) {
         return false;
       }
     }
