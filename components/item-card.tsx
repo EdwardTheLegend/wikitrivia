@@ -21,11 +21,6 @@ function capitalize(str: string): string {
 export default function ItemCard(props: Props) {
   const { draggable, flippedId, index, item, setFlippedId } = props;
 
-  // check if item is undefined
-  if (item === undefined) {
-    return null;
-  }
-
   const flipped = item.id === flippedId;
 
   const cardSpring = useSpring({
