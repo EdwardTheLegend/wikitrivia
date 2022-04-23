@@ -11,7 +11,7 @@ export function getRandomItem(deck: Item[], played: Item[]): Item {
       return false;
     }
 
-    if (candidate.includes("commune") || candidate.includes("municipal")) {
+    if (candidate.instance_of.includes("commune") || candidate.instance_of.includes("municipal")) {
       return false;
     }
 
