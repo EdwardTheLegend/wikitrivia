@@ -35,22 +35,25 @@ export default async function useAutoMoveSensor(
     state.badlyPlaced === null ||
     state.badlyPlaced.index === null ||
     state.badlyPlaced.rendered === false
-  ) {
-    return;
-  }
+    ) {
+      return null;
+    }
+    if (state.played[state.badlyPlaced.index + state.badlyPlaced.delta] === null ||
+      state.played[state.badlyPlaced.index + state.badlyPlaced.delta] === undefined) {
+      return null;
+    }
 
   const preDrag = api.tryGetLock?.(state.played[state.badlyPlaced.index].id);
 
   if (!preDrag) {
-    return;
+    return null;
   }
 
   const itemEl: HTMLElement | null = document.querySelector(
     `[data-rbd-draggable-id='${state.played[state.badlyPlaced.index].id}']`
   );
   const destEl: HTMLElement | null = document.querySelector(
-    `[data-rbd-draggable-id='${
-      state.played[state.badlyPlaced.index + state.badlyPlaced.delta].id
+    `[data-rbd-draggable-id='${state.played[state.badlyPlaced.index + state.badlyPlaced.delta].id
     }']`
   );
   const bottomEl: HTMLElement | null = document.getElementById("bottom");

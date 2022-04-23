@@ -34,5 +34,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# vscode history
+# vscode
 .history
+.vscode/settings.json

@@ -11,7 +11,7 @@ export interface GameState {
   // garbage collected.
   imageCache: HTMLImageElement[];
   lives: number;
-  next: Item | null;
-  nextButOne: Item | null;
+  next: Item ;
+  nextButOne: Item;
   played: PlayedItem[];
 }
