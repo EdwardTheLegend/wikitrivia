@@ -11,6 +11,10 @@ export function getRandomItem(deck: Item[], played: Item[]): Item {
       return false;
     }
 
+    if (candidate.includes("commune") || candidate.includes("municipal")) {
+      return false;
+    }
+
     return true;
   });
 
