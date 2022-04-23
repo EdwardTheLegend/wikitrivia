@@ -110,7 +110,7 @@ export default function Board(props: Props) {
   }, [setState, state]);
 
   const score = React.useMemo(() => {
-    return state.played.filter((item) => item.played.correct).length - 1;
+    return state.played.filter((item) => item?.played.correct).length - 1;
   }, [state.played]);
 
   React.useLayoutEffect(() => {
