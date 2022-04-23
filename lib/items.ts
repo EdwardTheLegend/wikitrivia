@@ -3,6 +3,10 @@ import { createWikimediaImage } from "./image";
 
 export function getRandomItem(deck: Item[], played: Item[]): Item {
   const playedPopulations = played.map((item): number => {
+    // check if item is undefined
+    if (item === undefined) {
+      return 0;
+    }
     return item.population;
   });
 
