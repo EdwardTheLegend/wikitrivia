@@ -11,6 +11,13 @@ export function getRandomItem(deck: Item[], played: Item[]): Item {
       return false;
     }
 
+    // iterate over all instance_of and check if it is a commune or a municipality
+    for (const instance of candidate.instance_of) {
+      if (instance.includes("commune") || instance.includes("municipality")) {
+        return false;
+      }
+    }
+
     return true;
   });
 
