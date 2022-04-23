@@ -5,7 +5,7 @@ import ItemCard from "./item-card";
 import styles from "../styles/next-item-list.module.scss";
 
 interface NextItemListProps {
-  next: Item | null;
+  next: Item;
 }
 
 export default function NextItemList(props: NextItemListProps) {

@@ -7,7 +7,7 @@ import { createWikimediaImage } from "../lib/image";
 import styles from "../styles/item-card.module.scss";
 
 type Props = {
-  draggable?: boolean;
+  draggable: boolean;
   flippedId?: null | string;
   index: number;
   item: Item | PlayedItem;
@@ -21,7 +21,8 @@ function capitalize(str: string): string {
 export default function ItemCard(props: Props) {
   const { draggable, flippedId, index, item, setFlippedId } = props;
 
-  const flipped = item.id === flippedId;
+  // flipped checks whether item.id is equal to flippedId. sometimes item is undefined
+  const flipped = item?.id === flippedId;
 
   const cardSpring = useSpring({
     opacity: flipped ? 1 : 0,
@@ -30,14 +31,23 @@ export default function ItemCard(props: Props) {
   });
 
   const type = React.useMemo(() => {
-    const safeDescription = item.description.replace(/ \(.+\)/g, "");
-
-    if (item.description.length < 60 && !/\d\d/.test(safeDescription)) {
-      return item.description.replace(/ \(.+\)/g, "");
+    if (item === undefined || item === null) {
+      return "42";
     }
+    else {
+      const safeDescription = item?.description.replace(/ \(.+\)/g, "");
 
-    return item.instance_of[0];
+      if (item?.description.length < 60 && !/\d\d/.test(safeDescription)) {
+        return item.description.replace(/ \(.+\)/g, "");
+      }
+
+      return item?.instance_of[0];
+    }
   }, [item]);
+
+  if (item === undefined) {
+    return null;
+  }
 
   return (
     <Draggable draggableId={item.id} index={index} isDragDisabled={!draggable}>

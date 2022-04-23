@@ -37,7 +37,7 @@ export default function Board(props: Props) {
       state.next === null ||
       (source.droppableId === "next" && destination.droppableId === "next")
     ) {
-      return;
+      return null;
     }
 
     const item = { ...state.next };
