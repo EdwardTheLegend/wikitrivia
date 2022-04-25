@@ -16,9 +16,11 @@ export default function Game() {
 
   React.useEffect(() => {
     const fetchGameData = async () => {
+      // pick a random integer between 0 and 4
+      const random = Math.floor(Math.random() * 5);
       const res = await axios.get<string>(
-        // "https://wikitrivia-data.pages.dev/items.json"
-        "https://raw.githubusercontent.com/EdwardTheLegend/wikitrivia-data/main/items.json"
+        // use the random integer to pick an items.json file
+        `https://wikitrivia-data.pages.dev/items${random}.json`
       );
       const items: Item[] = res.data
         .trim()
