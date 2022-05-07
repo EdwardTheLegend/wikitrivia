@@ -15,6 +15,15 @@ export default function Index() {
           type="image/svg+xml"
         />
         <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ee32d467b63d4a668b929bfb0f965c29"}'></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=3448602082"></script>
+        <script dangerouslySetInnerHTML={{
+          __html:
+            `window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '3448602082');`}}
+        />
       </Head>
 
       <Game />
