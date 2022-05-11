@@ -127,6 +127,17 @@ export default function Board(props: Props) {
     >
       <div className={styles.wrapper}>
         <div className={styles.top}>
+          {/* home button */}
+          <button
+            // style.homeButton class
+            className={styles.homeButton}
+            onClick={() => {
+              // go back to the Instructions page from instructions.tsx
+              window.location.href = "/";
+            }
+            }
+          >home</button>
+
           <Hearts lives={state.lives} />
           {state.lives > 0 ? (
             <>
