@@ -67,7 +67,6 @@ export default function Instructions(props: Props) {
           </div>
         </div>
       </div>
-      // settings button
       <button className={styles.settings} onClick={settings} id="settings">settings</button>
     </div>
   );
