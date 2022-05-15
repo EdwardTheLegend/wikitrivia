@@ -7,10 +7,11 @@ import Score from "./score";
 interface Props {
   highscore: number;
   start: () => void;
+  settings: () => void;
 }
 
 export default function Instructions(props: Props) {
-  const { highscore, start } = props;
+  const { highscore, start, settings } = props;
 
   return (
     <div className={styles.instructions}>
@@ -66,6 +67,8 @@ export default function Instructions(props: Props) {
           </div>
         </div>
       </div>
+      // settings button
+      <button className={styles.settings} onClick={settings} id="settings">settings</button>
     </div>
   );
 }

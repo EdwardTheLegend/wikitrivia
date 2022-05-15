@@ -6,12 +6,14 @@ import createState from "../lib/create-state";
 import Board from "./board";
 import Loading from "./loading";
 import Instructions from "./instructions";
+import Settings from "./settings";
 import badCards from "../lib/bad-cards";
 
 export default function Game() {
   const [state, setState] = useState<GameState | null>(null);
   const [loaded, setLoaded] = useState(false);
   const [started, setStarted] = useState(false);
+  const [settings, setSettings] = useState(false);
   const [items, setItems] = useState<Item[] | null>(null);
 
   React.useEffect(() => {
@@ -66,10 +68,16 @@ export default function Game() {
     return <Loading />;
   }
 
-  if (!started) {
+  if (!started && !settings) {
     return (
-      <Instructions highscore={highscore} start={() => setStarted(true)} />
+      <Instructions highscore={highscore} start={() => setStarted(true)} settings={() => setSettings(true)} />
     );
+  }
+
+  if (settings) {
+    return (
+      <Settings/>
+    )
   }
 
   return (
