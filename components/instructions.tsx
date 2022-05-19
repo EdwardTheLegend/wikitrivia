@@ -3,19 +3,21 @@ import GitHubButton from "react-github-btn";
 import styles from "../styles/instructions.module.scss";
 import Button from "./button";
 import Score from "./score";
+import Link from "next/link";
 
 interface Props {
   highscore: number;
   start: () => void;
-  settings: () => void;
 }
 
 export default function Instructions(props: Props) {
-  const { highscore, start, settings } = props;
+  const { highscore, start } = props;
 
   return (
     <div className={styles.instructions}>
-      <button className={styles.settings} onClick={settings} id="settings">settings</button>
+      <Link href="/settings">
+        <button className={styles.settings} id="settings">settings</button>
+      </Link>
       <div className={styles.wrapper}>
         <h2>Place the cards on the line in the correct order by population.</h2>
         {highscore !== 0 && (
