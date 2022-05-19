@@ -1,6 +1,6 @@
 # Wiki Trivia
 
-This is the source code for the web app at https://wikitrivia.pages.dev
+This is the source code for the web app at https://wikitrivia.edwardtlowe.com
 
 The repository for the scraper can be found [here](https://github.com/EdwardTheLegend/wikitrivia-generator).
 
