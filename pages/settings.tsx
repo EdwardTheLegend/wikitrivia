@@ -4,7 +4,9 @@ import styles from "../styles/settings.module.scss";
 import Head from "next/head";
 
 export default function Settings() {
-    const [exampleSetting, setExampleSetting] = useState(true);
+    const [exampleSetting1, setExampleSetting1] = useState(true);
+    const [exampleSetting2, setExampleSetting2] = useState(true);
+    const [exampleSetting3, setExampleSetting3] = useState(true);
 
     return (
         <>
@@ -32,9 +34,19 @@ export default function Settings() {
             <div className={styles.settings}>
                 <h1>Settings</h1>
                 <hr />
-
                 <ul>
-                    <li><p>Example setting 1</p><Switch className={styles.switch} value={exampleSetting} onChange={setExampleSetting}></Switch></li>
+                    <li>
+                        <p>Example setting 1</p>
+                        <Switch className={styles.switch} value={exampleSetting1} onChange={setExampleSetting1}></Switch>
+                    </li>
+                    <li>
+                        <p>Example setting 2</p>
+                        <Switch className={styles.switch} value={exampleSetting2} onChange={setExampleSetting2}></Switch>
+                    </li>
+                    <li>
+                        <p>Example setting 3</p>
+                        <Switch className={styles.switch} value={exampleSetting3} onChange={setExampleSetting3}></Switch>
+                    </li>
                 </ul>
             </div>
         </>
