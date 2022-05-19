@@ -13,27 +13,6 @@ export default function Index() {
           type="image/svg+xml"
         />
 
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com/"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        />
-        <noscript>
-          <link
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet"
-          />
-        </noscript>
-
         <script
           defer
           src="https://static.cloudflareinsights.com/beacon.min.js"
