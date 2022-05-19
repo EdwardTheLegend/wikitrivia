@@ -15,6 +15,7 @@ export default function Instructions(props: Props) {
 
   return (
     <div className={styles.instructions}>
+      <button className={styles.settings} onClick={settings} id="settings">settings</button>
       <div className={styles.wrapper}>
         <h2>Place the cards on the line in the correct order by population.</h2>
         {highscore !== 0 && (
@@ -67,7 +68,6 @@ export default function Instructions(props: Props) {
           </div>
         </div>
       </div>
-      <button className={styles.settings} onClick={settings} id="settings">settings</button>
     </div>
   );
 }
