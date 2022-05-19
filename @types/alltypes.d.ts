@@ -1,1 +1,1 @@
-declare module 'react-input-switch';
+declare module "react-input-switch";

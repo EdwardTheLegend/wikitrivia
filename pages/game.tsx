@@ -52,7 +52,9 @@ export default function Game() {
   }, [items]);
 
   const [highscore, setHighscore] = React.useState<number>(
-    (typeof window !== "undefined") ? Number(localStorage.getItem("highscore") ?? "0") : 0
+    typeof window !== "undefined"
+      ? Number(localStorage.getItem("highscore") ?? "0")
+      : 0
   );
 
   const updateHighscore = React.useCallback((score: number) => {

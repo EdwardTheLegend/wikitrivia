@@ -13,26 +13,48 @@ export default function Index() {
           type="image/svg+xml"
         />
 
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="anonymous" />
-        <link rel="preload" as="style" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com/"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
         <noscript>
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+          />
         </noscript>
 
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ee32d467b63d4a668b929bfb0f965c29"}'></script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QWSN0LZWV"></script>
-        <script dangerouslySetInnerHTML={{
-          __html:
-            `window.dataLayer = window.dataLayer || [];
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "ee32d467b63d4a668b929bfb0f965c29"}'
+        ></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-9QWSN0LZWV"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-9QWSN0LZWV');`}}
+          gtag('config', 'G-9QWSN0LZWV');`,
+          }}
         />
       </Head>
 
-      <Instructions/>
+      <Instructions />
     </>
   );
 }

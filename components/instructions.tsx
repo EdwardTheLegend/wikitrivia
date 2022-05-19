@@ -6,22 +6,28 @@ import Score from "./score";
 import Link from "next/link";
 
 export default function Instructions() {
-
-  const highscore = (typeof window !== "undefined") ? Number(localStorage.getItem("highscore") ?? "0") : 0
+  const highscore =
+    typeof window !== "undefined"
+      ? Number(localStorage.getItem("highscore") ?? "0")
+      : 0;
 
   return (
     <div className={styles.instructions}>
       <Link href="/settings">
-        <button className={styles.settings} id="settings">settings</button>
+        <button className={styles.settings} id="settings">
+          settings
+        </button>
       </Link>
       <div className={styles.wrapper}>
         <h2>Place the cards on the line in the correct order by population.</h2>
-        {(
+        {
           <div className={styles.highscoreWrapper}>
             <Score score={highscore} title="Best streak" />
           </div>
-        )}
-        <Link href="/game"><Button text="Start game" /></Link>
+        }
+        <Link href="/game">
+          <Button text="Start game" />
+        </Link>
         <div className={styles.about}>
           <div>
             All data sourced from{" "}
@@ -62,7 +68,10 @@ export default function Instructions() {
             Star
           </GitHubButton>
           <div>
-            This game was forked from the original game by <a href="https://github.com/tom-james-watson/wikitrivia">Tom James Watson</a>
+            This game was forked from the original game by{" "}
+            <a href="https://github.com/tom-james-watson/wikitrivia">
+              Tom James Watson
+            </a>
           </div>
         </div>
       </div>

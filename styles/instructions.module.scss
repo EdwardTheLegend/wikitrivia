@@ -34,7 +34,7 @@
       margin-bottom: 10px;
       color: $text-light;
 
-      >div {
+      > div {
         margin-bottom: 10px;
       }
 
@@ -42,7 +42,6 @@
         color: $text-light;
         margin-bottom: 10px;
       }
-
     }
   }
 }
@@ -60,7 +59,7 @@
 }
 
 .settings:hover {
-  animation: rotate 1s ease-in-out
+  animation: rotate 1s ease-in-out;
 }
 
 @keyframes rotate {

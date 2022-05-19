@@ -33,8 +33,7 @@ export default function ItemCard(props: Props) {
   const type = React.useMemo(() => {
     if (item === undefined || item === null) {
       return "42";
-    }
-    else {
+    } else {
       const safeDescription = item?.description.replace(/ \(.+\)/g, "");
 
       if (item?.description.length < 60 && !/\d\d/.test(safeDescription)) {
