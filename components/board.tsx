@@ -8,6 +8,7 @@ import PlayedItemList from "./played-item-list";
 import styles from "../styles/board.module.scss";
 import Hearts from "./hearts";
 import GameOver from "./game-over";
+import HomeButton from "./home-button";
 
 interface Props {
   highscore: number;
@@ -127,16 +128,7 @@ export default function Board(props: Props) {
     >
       <div className={styles.wrapper}>
         <div className={styles.top}>
-          {/* home button */}
-          <button
-            // style.homeButton class
-            className={styles.homeButton}
-            onClick={() => {
-              // go back to the Instructions page from instructions.tsx
-              window.location.href = "/";
-            }
-            }
-          >home</button>
+          <HomeButton/>
 
           <Hearts lives={state.lives} />
           {state.lives > 0 ? (

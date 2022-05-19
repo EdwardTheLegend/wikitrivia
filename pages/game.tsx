@@ -3,15 +3,15 @@ import axios from "axios";
 import { GameState } from "../types/game";
 import { Item } from "../types/item";
 import createState from "../lib/create-state";
-import Board from "./board";
-import Loading from "./loading";
-import Instructions from "./instructions";
+import Board from "../components/board";
+import Loading from "../components/loading";
+// import Instructions from "../components/instructions";
 import badCards from "../lib/bad-cards";
 
 export default function Game() {
   const [state, setState] = useState<GameState | null>(null);
   const [loaded, setLoaded] = useState(false);
-  const [started, setStarted] = useState(false);
+  // const [started, setStarted] = useState(false);
   const [items, setItems] = useState<Item[] | null>(null);
 
   React.useEffect(() => {
@@ -66,11 +66,11 @@ export default function Game() {
     return <Loading />;
   }
 
-  if (!started) {
-    return (
-      <Instructions highscore={highscore} start={() => setStarted(true)} />
-    );
-  }
+  // if (!started) {
+  //   return (
+  //     <Instructions highscore={highscore} />
+  //   );
+  // }
 
 
   return (

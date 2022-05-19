@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Switch from 'react-input-switch';
 import styles from "../styles/settings.module.scss";
 import Head from "next/head";
+import HomeButton from "../components/home-button";
 
 export default function Settings() {
     const [exampleSetting1, setExampleSetting1] = useState(true);
@@ -31,6 +32,7 @@ export default function Settings() {
                 />
 
             </Head>
+            <HomeButton />
             <div className={styles.settings}>
                 <h1>Settings</h1>
                 <hr />

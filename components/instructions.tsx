@@ -5,13 +5,9 @@ import Button from "./button";
 import Score from "./score";
 import Link from "next/link";
 
-interface Props {
-  highscore: number;
-  start: () => void;
-}
+export default function Instructions() {
 
-export default function Instructions(props: Props) {
-  const { highscore, start } = props;
+  const highscore = (typeof window !== "undefined") ? Number(localStorage.getItem("highscore") ?? "0") : 0
 
   return (
     <div className={styles.instructions}>
@@ -20,12 +16,12 @@ export default function Instructions(props: Props) {
       </Link>
       <div className={styles.wrapper}>
         <h2>Place the cards on the line in the correct order by population.</h2>
-        {highscore !== 0 && (
+        {(
           <div className={styles.highscoreWrapper}>
             <Score score={highscore} title="Best streak" />
           </div>
         )}
-        <Button onClick={start} text="Start game" />
+        <Link href="/game"><Button text="Start game" /></Link>
         <div className={styles.about}>
           <div>
             All data sourced from{" "}

@@ -4,7 +4,7 @@ import styles from "../styles/button.module.scss";
 
 interface Props {
   minimal?: boolean;
-  onClick: () => void;
+  onClick?: () => void;
   text: string;
 }
 
