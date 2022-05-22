@@ -14,12 +14,24 @@ export default function Game() {
 
   React.useEffect(() => {
     const fetchGameData = async () => {
-      // pick a random integer between 0 and 4
-      const random = Math.floor(Math.random() * 5);
-      const res = await axios.get<string>(
-        // use the random integer to pick an items.json file
-        `https://wikitrivia-data.pages.dev/items${random}.json`
-      );
+      const countryOnly =
+        typeof window !== "undefined"
+          ? localStorage.getItem("countryOnly")
+          : "false";
+
+      let res;
+      if (countryOnly === "true") {
+        res = await axios.get<string>(
+          `https://wikitrivia-data.pages.dev/countries.json`
+        );
+      } else {
+        // pick a random integer between 0 and 4
+        const random = Math.floor(Math.random() * 5);
+        res = await axios.get<string>(
+          // use the random integer to pick an items.json file
+          `https://wikitrivia-data.pages.dev/items${random}.json`
+        );
+      }
       const items: Item[] = res.data
         .trim()
         .split("\n")

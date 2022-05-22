@@ -5,6 +5,11 @@ import Head from "next/head";
 import HomeButton from "../components/home-button";
 
 export default function Settings() {
+  const [countryOnly, setCountryOnly] = useState(
+    typeof window !== "undefined"
+      ? localStorage.getItem("countryOnly")
+      : "false"
+  );
   const [exampleSetting1, setExampleSetting1] = useState(true);
   const [exampleSetting2, setExampleSetting2] = useState(true);
   const [exampleSetting3, setExampleSetting3] = useState(true);
@@ -24,6 +29,10 @@ export default function Settings() {
         <h1>Settings</h1>
         <hr />
         <ul>
+          <li>
+            <p>Only show countries</p>
+            <Switch className={styles.switch} value={countryOnly} onChange={(value: string) => { setCountryOnly(value); if (typeof window !== "undefined") { localStorage.setItem("countryOnly", value) } }} on="true" off="false"></Switch>
+          </li>
           <li>
             <p>Example setting 1</p>
             <Switch
